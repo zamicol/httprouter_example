@@ -9,8 +9,8 @@ import (
 
 func main() {
 	router := httprouter.New()
+
 	// Serve all static files from the public directory.
-	// .well-known is for certbot and tls.
 	router.ServeFiles("/assets/*filepath", http.Dir("web/public/assets"))
 
 	// Top level files must be named explicitly. (No * matching)
